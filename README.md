@@ -24,12 +24,14 @@ The dataset contains demographic and socioeconomic attributes including:
 
    - Education level
 
+   - Education Years
+
    - Work class
 
    - Age
 
 
-All variables were provided in bins and encoding was done before model training.
+All variables were provided in bins and encoding was performed before model training.
 
 ## Methodology
 1. Data Preparation
@@ -41,15 +43,18 @@ All variables were provided in bins and encoding was done before model training.
 2. Decision Tree Model
    - A DecisionTreeClassifier from scikit-learn was used.
 
+   - Confusion Matrix was created
+     
    - Model evaluation metrics:
 
-   - Accuracy
+     - Accuracy
 
-   - Recall
+     - Recall
 
-   - Precision
+     - Precision
 
-    - F1 Score
+      - F1 Score
+
 
 3. Hyper-Parameter Tuning
    - Four hyper-parameters were tuned sequentially:
@@ -71,6 +76,7 @@ All variables were provided in bins and encoding was done before model training.
   Performance results were stored in tables and visualized using line plots.
 
 4. Best Model Selection
+
     The best model was selected based on highest accuracy.
 
     Best performing configuration:
@@ -88,7 +94,8 @@ All variables were provided in bins and encoding was done before model training.
      - Recall: 0.5775
      - Precision: 0.7071
      - F1 Score: 0.68358
-5. Tree Visualization
+6. Tree Visualization
+
     The final Decision Tree was visualized using GraphViz.
 
     The visualization shows:
@@ -101,7 +108,8 @@ All variables were provided in bins and encoding was done before model training.
 
      - Class predictions
 
-6. Prediction on a New Individual
+7. Prediction on a New Individual
+
     A new individual record was created using the same preprocessing pipeline as training data.
 
     Input attributes included:
@@ -148,11 +156,31 @@ All variables were provided in bins and encoding was done before model training.
 
    - NumPy
 
-   - Scikit-learn
+  - For Visualizing Variables
+    - import matplotlib.pyplot as plt
+    - import seaborn as sns
+    - import graphviz
+    - import math
+    - import itertools
 
-   - Matplotlib
+  - For Cramer's V Analysis of Correlation between Categorical Variables
+    - from scipy.stats import chi2_contingency
 
-   - GraphViz
+  - For Decision Tree Classifier
+    - from sklearn.tree import DecisionTreeClassifier
+
+  - For encoding the categorical variables
+    - from sklearn.preprocessing import OrdinalEncoder
+
+  - For evaluating Decision Tree Performance
+      - from sklearn.metrics: 
+        - confusion_matrix,
+        - ConfusionMatrixDisplay,
+        - accuracy_score,
+        - precision_score,
+        - recall_score,
+        - f1_score,
+        - classification_report
 
 ## How to Run
  - Install dependencies:
